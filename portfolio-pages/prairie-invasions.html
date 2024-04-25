@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-CAN">
+
+<head>
+    <title>Meghan Rennie</title>
+    <link rel="icon" type="image/png" href="..\images\bee.svg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/project-page.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="../js/scripts.js"></script>
+    <script src="../js/slideshow.js"></script>
+    <script src="../js/pop-effect.js"></script>
+
+
+</head>
+
+<body>
+    <header class="header">
+        <ul class="tabs group sticky">
+            <li><a href="../primary-pages/about.html">About</a></li>
+            <li><a href="../primary-pages/music.html">Music</a></li>
+            <li class="active"><a href="../primary-pages/projects.html">Projects</a></li>
+        </ul>
+        <div id="name">
+            <a href="../index.html">
+                <h1>Meghan Rennie</h1>
+                <img id="bee" src="..\images\bee.svg">
+            </a>
+        </div>
+    </header>
+    <main class="container">
+        <div id="portfolio-parent">
+            <div class="bump-up">
+                <div class="portfolio pushpin-holder">
+                    <div class="pushpin tilted">
+                        <div class="pinhead"></div>
+                        <div class="pinbase"></div>
+                        <div class="pinshaft"></div>
+                        <div class="pinpoint"></div>
+                    </div>
+                </div>
+                <h2 class="crooked5 orange project-title">Prairie Invasions</h2>
+                <ul class="basic-padding portfolio-list">
+                    <li>Medium: Print publication</li>
+                    <li>Software used: Adobe InDesign</li>
+                    <li>Project Type: Commission</li>
+                    <li>Year: 2022</li>
+                </ul>
+            </div>
+
+            <div>
+                <!-- https://www.w3schools.com/howto/howto_js_slideshow.asp Slideshow container -->
+                <div class="slideshow-container">
+                    <!-- Full-width images with number and caption text -->
+                    <div class="mySlides fade" style="display: block;">
+                        <div class="numbertext">1 / 5</div>
+                        <img class="pinback-button-scale" src="..\images\prairie-invasions\prairie-invasions1.jpg"
+                            style="width:100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 5</div>
+                        <img class="pinback-button-scale" src="..\images\prairie-invasions\prairie-invasions2.jpg"
+                            style="width:100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 5</div>
+                        <img class="pinback-button-scale" src="..\images\prairie-invasions\prairie-invasions3.jpg"
+                            style="width:100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">4 / 5</div>
+                        <img class="pinback-button-scale" src="..\images\prairie-invasions\prairie-invasions4.jpg"
+                            style="width:100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">5 / 5</div>
+                        <img class="pinback-button-scale" src="..\images\prairie-invasions\prairie-invasions5.jpg"
+                            style="width:100%">
+                    </div>
+                    <div id="dot-box" class="dots-up">
+                        <span class="dot dot-active active-bounce" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span>
+                        <span class="dot" onclick="currentSlide(5)"></span>
+                    </div>
+                    <a class="prev extra-prev" onclick="plusSlides(-1)">></a>
+                    <a class="next extra-next" onclick="plusSlides(1)">></a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p class="portfolio-details basic-padding"> <a
+                    href="https://shop-at-saag.myshopify.com/products/prairie-invasions?_pos=1&_sid=92bb37df8&_ss=r"></a>
+                The Southern Alberta Art Gallery (SAAG) commissioned Meghan to do the layout design for the
+                art book <i>Prairie Invasions</i> by Emily Neufeld. From the SAAG Shop:
+            <p class="portfolio-details basic-padding">"In 2018, Emily Neufeld traveled with her partner and 10-year-old
+                son through the Prairies,
+                the previous home of her Mennonite grandmother, to investigate abandoned farmhouses, built
+                by settler migrants in the 19th century. Through subtle interventions, captured in beautiful
+                photographs, Neufeld grapples with tensions of colonial history, and contends with her own
+                responsibilities as an artist and environmental advocate of settler descent. In conjunction
+                with her recent exhibitions at the Richmond art Gallery and the Southern Alberta Art
+                Gallery, we are proud to release the publication Prairie Invasions. Prairie Invasions
+                features documentation of Neufeld's installations, notes and photographs from her field
+                work, and an essay from Nura Ali."</p>
+            </p>
+        </div>
+        <a href="../primary-pages/projects.html">
+            <h2 id="back-to-gallery" class="basic-padding">return to gallery</h2>
+        </a>
+    </main>
+
+</body>

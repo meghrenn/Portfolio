@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en-CAN">
+
+<head>
+    <title>Meghan Rennie</title>
+    <link rel="icon" type="image/png" href="../images/bee.svg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="../js/scripts.js"></script>
+</head>
+<style>
+    main {
+        min-width: 300px;
+        overflow-x: visible;
+    }
+
+    main>* {
+        max-width: 1000px;
+        min-width: 80vw;
+        margin: auto;
+
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    #say-hello {
+        width: 260px;
+        z-index: 7;
+        display: block;
+        position: absolute;
+        display: initial;
+        top: initial;
+        right: -10%;
+        bottom: 27%;
+    }
+
+    #learn-about-me {
+        max-height: 400px;
+        position: relative;
+    }
+
+    #learn-about-me-line {
+        position: absolute;
+        width: 680.3px;
+        height: 189px;
+        transform: scale(81%) translateX(38%) translateY(-46%);
+        z-index: 8;
+    }
+
+    .about-me-bubble {
+        position: static;
+        margin: auto;
+    }
+
+    #span2columns {
+        display: none !important;
+    }
+
+    #section1,
+    #section2,
+    #section3 {
+        position: relative;
+    }
+
+    .about img {
+        max-height: 275px;
+    }
+
+    h2.about {
+        color: white;
+    }
+
+    #project-filter h2 {
+        width: fit-content;
+    }
+
+    #project-filter>* {
+        margin: auto;
+    }
+
+    .about-parent {
+        display: grid;
+        grid-template-columns: 3fr 4fr;
+        gap: 80px;
+        height: min-content;
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    #likeToKnow {
+        margin: auto;
+        font-family: "Bakso-Sapi", 'Arial Rounded MT Bold', "Helvetica Rounded", sans-serif;
+        list-style-type: none;
+        text-align: center;
+        display: block;
+        font-size: 27px;
+        padding: 15px 0;
+    }
+
+    #more-info-grid {
+        font-family: "Bakso-Sapi", 'Arial Rounded MT Bold', "Helvetica Rounded", sans-serif;
+        text-align: center;
+        font-size: 27px;
+        display: flex;
+        height: min-content;
+        align-items: center;
+        justify-items: center;
+        justify-content: space-evenly;
+        gap: 10vw;
+        z-index: 6;
+    }
+
+    #know-grid {
+        /* margin: auto; */
+        display: grid;
+        grid-template-columns: auto auto;
+        height: min-content;
+        width: fit-content;
+        min-width: fit-content;
+    }
+
+    .know-padding {
+        padding: 33px 10px 0 10px;
+
+    }
+
+    #practice-grid {
+        display: flex;
+        align-items: flex-start;
+        gap: 10vw;
+        height: min-content;
+
+        margin: 0;
+    }
+
+    .self-portrait {
+        background-color: #ffffff;
+        text-align: center;
+        transform-origin: 50% 5%;
+        transition: transform 0.3s ease;
+        margin: 0 0 30px 0;
+        box-shadow: 0 10px 10px 2px rgba(0, 0, 0, 0.3);
+        max-width: 300px;
+    }
+
+    .self-portrait img {
+        max-width: 90%;
+    }
+
+    .i-like:hover {
+        color: var(--blue);
+        cursor: pointer;
+        transition: 0.2s ease;
+    }
+
+    #deselect-all:hover {
+        color: var(--dark-green);
+    }
+
+    #scroll-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1px;
+        padding-inline-start: 0;
+        transform: translateY(-10%);
+    }
+
+    #scroll-list li:hover {
+        color: var(--purple);
+        transition: 0.2s ease;
+    }
+
+    #french,
+    #dutch {
+        transition: transform 0.3s ease;
+    }
+
+    #french:hover,
+    #dutch:hover {
+        color: #000000;
+        transition: transform 0.3s ease;
+    }
+
+    #short-bio {
+        transform: rotate(5deg);
+        /*  translateY(110px)  */
+        margin: auto;
+    }
+
+    #tape2 {
+        left: 30%;
+        transform: translateX(0);
+    }
+
+
+    @media screen and (max-width: 1700px) {
+        #say-hello {
+            /* display: none; */
+            right: -17%;
+            bottom: 25%;
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        #say-hello {
+            /* display: none; */
+            right: -10%;
+            bottom: 30%;
+        }
+
+
+
+        /* #scroll-list li {
+            width: 120px;
+        } */
+    }
+
+    @media screen and (max-width: 1000px) {
+        #say-hello {
+            display: initial;
+            width: 200px;
+            /* transform: translateY(-60%) translateX(130%); */
+            top: initial;
+            right: -10%;
+            bottom: 55%;
+
+        }
+    }
+
+    @media screen and (max-width: 750px) {
+        #say-hello {
+            top: initial;
+            right: -10%;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        #say-hello {
+            top: initial;
+            right: -25%;
+            bottom: 65%;
+            /* right: -10%;
+            bottom: 55%; */
+        }
+    }
+
+
+    @media (max-aspect-ratio: 1.4) {
+        #practice-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin: auto;
+            max-width: 800px;
+            min-width: 200px;
+        }
+    }
+
+    @media (max-aspect-ratio: 1.2) {
+
+        /* @media screen and (max-width: 1200px) { */
+        #tape2 {
+            left: 20%;
+        }
+
+        #tape-label6,
+        #tape-label7 {
+            padding: 15px;
+        }
+
+        /* .self-portrait {
+            max-width: 375px; 
+             margin: auto; 
+             margin: auto auto 90px auto;
+        } */
+
+        #scroll-list {
+            transform: translateY(0);
+        }
+
+        #scroll-list li {
+            width: 200px;
+        }
+
+        .know-padding {
+            padding: 15px;
+            margin: auto;
+        }
+
+        #short-bio {
+            transform: rotate(5deg);
+        }
+
+
+
+        /* #short-bio {
+            transform: translateY(0px) rotate(5deg);
+            margin: 60px 0 0 0;
+        } */
+
+    }
+
+
+
+
+
+    /* @media screen and (max-width: 700px) { */
+    @media (max-aspect-ratio: 0.85) {
+
+
+        .about-parent,
+        #practice-grid {
+            display: inline-block;
+        }
+
+        #practice-grid {
+            max-width: 60vw;
+        }
+
+        .self-portrait {
+            /* max-width: 375px; */
+            margin: auto auto 90px auto;
+        }
+
+        .crooked3,
+        .crooked5,
+        .crooked-2 {
+            -ms-transform: rotate(0);
+            -moz-transform: rotate(0);
+            -webkit-transform: rotate(0);
+            -o-transform: rotate(0);
+            transform: rotate(0);
+        }
+
+        #short-bio {
+            transform: translateY(0);
+        }
+
+
+
+        #tape2 {
+            width: 300px;
+            left: 0;
+            top: -40px;
+        }
+
+
+
+        .tape3 {
+            display: none;
+            width: 200px;
+            top: -40px;
+            right: -70px;
+            z-index: 5;
+        }
+
+        #fave-card ul li {
+            font-size: 15px;
+            padding: 10px 0 10px 0;
+        }
+
+
+        /* @media screen and (max-width: 750px) { */
+
+
+        #span1column {
+            display: none;
+        }
+
+        #span2columns {
+            display: inline-block !important;
+            grid-column: 1 / span 2;
+            max-width: 300px;
+        }
+
+        #learn-about-me {
+            display: none;
+        }
+
+        #learn-about-me-line {
+            transform: scale(46%) translateX(-39.5%) translateY(-64.8%);
+            height: auto;
+        }
+
+        #know-grid {
+            display: initial;
+        }
+
+
+        #scroll-list {
+            height: min-content;
+            margin: auto;
+            /* transform: translateY(-10%); */
+            gap: 10%;
+        }
+
+
+        #more-info-grid {
+            flex-direction: column;
+            /* gap: 20px; */
+        }
+
+        #more-info-grid>* {
+            width: 100%;
+
+        }
+
+
+
+        /* .know-padding {
+            padding: 25px 15px 0 15px;
+        } */
+
+        /* #more-info-grid #tape-label2,
+        #more-info-grid #tape-label4 {
+            background-size: 170px 70px;
+        }
+
+        #scroll-list,
+        #music-list {
+            padding: 0;
+        } */
+
+
+        /* #scroll-list li,
+        #music-list li {
+            font-size: 25px;
+        } */
+
+
+        #tape-label1,
+        #tape-label2,
+        #tape-label3,
+        #tape-label5 {
+            background-size: 190px 75px;
+        }
+
+    }
+
+
+
+    @media (max-aspect-ratio: 0.6) {
+
+        #scroll-list {
+            gap: 10%;
+        }
+
+
+    }
+</style>
+
+<body>
+    <header class="header" id="myHeader">
+        <ul class="tabs group sticky">
+            <li class="active"><a href="about.html">About</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="projects.html">Projects</a></li>
+        </ul>
+        <div id="name">
+            <a href="../index.html">
+                <h1>Meghan Rennie</h1> <img id="bee" src="../images/bee.svg">
+            </a>
+        </div>
+    </header>
+    <!-- <div>
+        <div class="background-paper" id="paper1"></div>
+        <div class="background-paper" id="paper2"></div>
+        <div class="background-paper" id="paper3"></div>
+        <div class="background-paper" id="paper4"></div>
+    </div> -->
+
+    <main class="container2">
+        <div class="about-parent">
+            <div class="about self-portrait">
+                <div class="about pushpin tilted">
+                    <div class="pinhead"></div>
+                    <div class="pinbase"></div>
+                    <div class="pinshaft"></div>
+                    <div class="pinpoint"></div>
+                </div>
+                <img class="about" src="../images/meghan-irl.jpg" alt="A cartoon representation of Meghan">
+                <h3 class="basic-padding">Meghan irl</h3>
+            </div>
+            <div id="short-bio">
+                <img class="cartoon-meghans" id="say-hello" src="../images/cartoon-meghans/sitting-waving1.svg">
+                <img class="tape1" src="../images/tape/tape-corner-white.png">
+                <div class="shadow">
+                    <h2 class="about basic-padding blue">About Me(ghan)</h2>
+                    <p class="about basic-padding bee-wings">Meghan Rennie is often an artist, sometimes a
+                        scholar, and hopefully always a friend.
+                        <!-- She is enamoured with humanity and passionate about projects: -->
+                        She's got a constant roster of projects in-progress: currently, she dabbles
+                        in DIY publishing, graphic design, music-making, and comics. She frequently
+                        writes about herself in the third person.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="know-grid">
+            <div class="oval-speech about-me-bubble" id="span2columns">
+                <p>What would you like to know about me?</p>
+            </div>
+            <img src="../images/cartoon-meghans/standing1.svg" id="learn-about-me"
+                alt="A cartoon representation of Meghan">
+            <ul id="scroll-list">
+                <div class="oval-speech about-me-bubble" id="span1column">
+                    <p>What would you like to know about me?</p>
+                </div>
+                <li class="know-padding" id="tape-label1" data-target="section1">Creative Practice</li>
+                <li class="know-padding" id="tape-label5" data-target="section2">Personal Life</li>
+                <li class="know-padding" id="tape-label3" data-target="section3">Contact Info</li>
+            </ul>
+        </div>
+        <div class="shadow crooked-2" id="section1">
+            <h2 class="about basic-padding dark-green">Creative Practice</h2>
+            <div id="project-filter" class="basic-padding light-green">
+                <h2>Sort by topic:</h2>
+                <div class="basic-padding" style="width:fit-content">
+                    <ul id="check-list">
+                        <li class="check"><input type="checkbox" data-filter="visual-art">Visual Art</li>
+                        <li class="check"><input type="checkbox" data-filter="music">Music</li>
+                        <li class="check"><input type="checkbox" data-filter="writing">Writing</li>
+                        <li id="deselect-all" class="deselect-all">Deselect All </li>
+                    </ul>
+                </div>
+            </div>
+            <p class="visual-art basic-padding light-green">Creatively, Meghan Rennie is all over the place.
+                <!-- has a lazy Susan of creative interests, which
+                she spins and samples from rather chaotically.  -->
+                Her artistic “career” began at sixteen when she started
+                her own business (SunSoft Art) selling handmade linocut greeting cards. For every five
+                cards sold, she wrote a personal message in one and sent it to a family staying at the <a
+                    href="https://rmhcalberta.org/stay/edmonton-house/" target="_blank"
+                    rel="noopener noreferrer">Northern Alberta Ronald
+                    McDonald House.</a>
+            </p>
+            <p class="music basic-padding light-green">At seventeen, Meghan started writing and recording
+                music, <a href="music.html">sharing her songs online</a>. She originally worked under the project
+                title Be Kind to Dogs, though she has since switched to using her own name. As a musician,
+                she has performed at The Verge Arts Festival in Cold Lake and at Arts Days events in Lethbridge, and she
+                has
+                been on the award-winning CKXU show For the Record. She created the intro/outro music for
+                the podcast <a href="https://excusestoconnect.com/podcast" target="_blank"
+                    rel="noopener noreferrer">Excuses to Connect.</a>
+            </p>
+            <p class="music basic-padding light-green">Meghan’s involvement in the music scene goes beyond writing
+                and performing. She has a minor in music marketing and management from Hogeschool Utrecht in the
+                Netherlands, and she often volunteers with <a href="https://ckxu.com/">CKXU Radio Society</a> in roles
+                varying from general fundraiser to president of the board of directors. </p>
+            <p class="writing basic-padding light-green">Meghan's poetry and prose
+                fiction has appeared in multiple publications, including
+                <!-- <a href="https://themeliorist.ca/wp-content/uploads/2020/03/meliorist-march-2020-web.pdf"> -->
+                <a href="https://themeliorist.ca/" target="_blank"> The Meliorist</a>,
+                <a href="https://straybooks.ca/pulp-kings-seven-war/" target="_blank" rel="noopener noreferrer">Pulp
+                    Kings</a>,
+                <!-- <ahref="https://bluemarblereview.com/what-practice-makes/"> -->
+                The Blue Marble Review, and <!-- <a href="https://www.sadgirlreview.com/sgr-issue5.pdf"> -->
+                Sad Girl Review; additionally, her one-act dark comedy, <i>It’s a Dead Body!</i>, was performed at the
+                2019 Verge Arts Festival.
+                <!-- Her academic writing has also been accepted into international marketing
+                conferences. -->
+            </p>
+            <!-- Between other projects, Meghan keeps busy: Her -->
+            <!-- <p class="visual-art basic-padding light-green"> She undertakes the occasional graphic design commission,
+                creating logos and designing print publications.</p>
+            <p class="visual-art basic-padding light-green"> She makes comics, usually as mini-zines which she disseminates
+                around town.</p>
+            <p class="about basic-padding light-green">She also writes:</p> -->
+
+        </div>
+
+
+
+        <div id="practice-grid">
+            <div>
+                <div id="pushpin" class="pushpin tilted">
+                    <div class="pinhead"></div>
+                    <div class="pinbase"></div>
+                    <div class="pinshaft"></div>
+                    <div class="pinpoint"></div>
+                </div>
+                <p class="crooked-2 basic-padding pink shadow">
+                    Iterative processes soothe her perfectionist tendencies. She
+                    likes
+                    practice
+                    rounds,
+                    second chances, and opportunities to improve.
+                </p>
+            </div>
+            <div>
+                <div id="pushpin" class="pushpin tilted">
+                    <div class="pinhead"></div>
+                    <div class="pinbase"></div>
+                    <div class="pinshaft"></div>
+                    <div class="pinpoint"></div>
+                </div>
+                <p class="basic-padding pink shadow">Her personal tastes tend towards maximalism. She wants colours
+                    and
+                    patterns and
+                    noise—cartoons and hallucinations and synaesthesia—verbose visual language.</p>
+            </div>
+            <div>
+                <div id="pushpin" class="pushpin tilted">
+                    <div class="pinhead"></div>
+                    <div class="pinbase"></div>
+                    <div class="pinshaft"></div>
+                    <div class="pinpoint"></div>
+                </div>
+                <p class="crooked5 basic-padding pink shadow">Physical media is incredibly important to her. She loves
+                    everything
+                    that’s
+                    real,
+                    hand-holdable, and unavoidable—impossible to lose in the digital deluge. She wants something
+                    right
+                    in
+                    front of her, in front of you. </p>
+            </div>
+            <div class="crooked3">
+                <div id="pushpin" class="pushpin tilted">
+                    <div class="pinhead"></div>
+                    <div class="pinbase"></div>
+                    <div class="pinshaft"></div>
+                    <div class="pinpoint"></div>
+                </div>
+                <p class="basic-padding pink shadow">She’s oriented around collection and categorisation. She
+                    likes
+                    curating,
+                    compiling,
+                    and collaging elements to form a new whole. She revels in mixing fiction and non-fiction, and in
+                    building rules for new realities. </p>
+            </div>
+        </div>
+
+
+
+        <!-- <div id="tape2-spacer">
+            <div style="position: relative; display:flex;">
+                <img id="tape2" class="tape2" src="images\tape\tape-straight-cream2.png">
+            </div>
+        
+            <div class="crooked-2 shadow">
+                <p class="about basic-padding pink">Iterative processes soothe her perfectionist tendencies. She
+                    likes
+                    practice
+                    rounds,
+                    second chances, and opportunities to improve.
+                </p>
+                <p class="about basic-padding pink">She’s oriented around collection and categorisation. She likes
+                    curating,
+                    compiling,
+                    and collaging elements to form a new whole. She revels in mixing fiction and non-fiction, and in
+                    building rules for new realities. </p>
+                <p class="about basic-padding pink">Physical media is incredibly important to her. She loves
+                    everything
+                    that’s
+                    real,
+                    hand-holdable, and unavoidable—impossible to lose in the digital deluge. She wants something
+                    right
+                    in
+                    front of her, in front of you. </p>
+                <p class="about basic-padding pink">Her personal tastes tend towards maximalism. She wants colours
+                    and
+                    patterns and
+                    noise—cartoons and hallucinations and synaesthesia—verbose visual language.</p>
+            </div>
+            <div style="clear:both;"></div>
+        </div> -->
+
+        <div id="more-info-grid">
+            <a class="basic-padding dark-hover" id="tape-label7" href="meghan-rennie-artist-cv.pdf" target="_blank">
+                Artist CV
+            </a>
+            <a class="basic-padding dark-hover" id="tape-label6" href="zines.html" target="_blank">
+                Business<br>Card Zine
+            </a>
+
+        </div>
+
+        <div id="section2">
+            <img class="tape3" src="../images/tape/tape-cross-cream2.png">
+            <div class="shadow">
+                <h2 class="about basic-padding orange">Personal Life</h2>
+                <p class="about basic-padding yellow">Meghan Rennie has no hometown. As a military brat, she was
+                    born on
+                    Elmendorf Air
+                    Force Base in Alaska, spent her childhood moving every two years, then lived through an angsty
+                    adolescence in Cold Lake (AB). She is currently pursuing a combined bachelor’s degree in
+                    General
+                    Management and <a class="cool-hover" href="https://ulethnewmedia.com/" target="_blank"
+                        rel="noopener noreferrer">New Media</a> at the University of Lethbridge.
+                </p>
+                <p class="about basic-padding yellow">Meghan is a generally busy person who always has a handful of
+                    projects
+                    in-progress, though she’s trying to be less of a workaholic about it all. She collects buttons
+                    and
+                    pins, patterned socks, zines, and vintage Garfield merchandise. <em id="french">She can speak
+                        French,
+                        though honestly it’s much easier to write than to speak</em>; <em id="dutch">her Dutch isn't
+                        great, but
+                        she does her best.</em> Her life goals are to make art, make friends, and be kinder to
+                    herself.
+                </p>
+            </div>
+        </div>
+        <div id="pushpin-spacer">
+            <div id="pushpin" class="pushpin tilted">
+                <div class="pinhead"></div>
+                <div class="pinbase"></div>
+                <div class="pinshaft"></div>
+                <div class="pinpoint"></div>
+            </div>
+            <div class="about card basic-padding" id="fave-card">
+                <ul class="basic-padding">
+                    <li>Favourite Book: <a class="i-like"
+                            href="https://archive.org/details/in.ernet.dli.2015.350305/page/n9/mode/2up">A Tree
+                            Grows in Brooklyn</a> by Betty Smith</li>
+                    <li>(One of Many) Favourite Song(s): <a class="i-like"
+                            href="https://youtu.be/9t9HQMGfGrY?si=9z6s_13jbctA3n6d">"All I Really Want"</a> by
+                        Alanis Morissette</li>
+                    <li>Favourite Creature: Pond
+                        snail (Lymnaeidae)</li>
+                    <!--              <a class="i-like"              href="https://youtu.be/j2TUAsVksWQ?si=D6j6FTHyi60NpHUa"</a> 
+ -->
+                </ul>
+
+            </div>
+        </div>
+
+
+        <div class="basic-padding" id="section3">
+            <div class="shadow">
+                <!-- <img class="tape3" src="../images/tape/tape-straight-cream1.png"> -->
+                <h2 class="about basic-padding berry">Contact Information</h2>
+                <p class="about basic-padding pink">You can reach Meghan via email at meghancrennie@gmail.com.
+                </p>
+            </div>
+        </div>
+        <div class="basic-padding">
+            <a data-target="section1">
+                <h2 id="back-to-top" class="basic-padding">Back to top</h2>
+            </a>
+        </div>
+    </main>
+
+</body>
+<script>
+    $(document).ready(function () {
+        //FRENCH AND DUTCH TEXT
+        const $french = $('#french');
+        const $dutch = $('#dutch');
+        const frenchOriginalText = "She can speak French, though honestly it’s much easier to write than to speak";
+        const frenchNewText = "Elle parle assez bien le français, mais franchement c'est beaucoup plus facile de l'écrire que de le parler";
+        const dutchOriginalText = "her Dutch isn't great, but she does her best.";
+        const dutchNewText = "haar Nederlands is slecht, maar ze doet haar best.";
+        $french.on('mouseover', function () {
+            $french.animate({ opacity: 0 }, 300, function () {
+                $french.text(frenchNewText).animate({ opacity: 1 }, 150);
+            });
+        });
+        $french.on('mouseout', function () {
+            $french.animate({ opacity: 0 }, 300, function () {
+                $french.text(frenchOriginalText).animate({ opacity: 1 }, 150);
+            });
+        });
+        $dutch.on('mouseover', function () {
+            $dutch.animate({ opacity: 0 }, 300, function () {
+                $dutch.text(dutchNewText).animate({ opacity: 1 }, 150);
+            });
+        });
+        $dutch.on('mouseout', function () {
+            $dutch.animate({ opacity: 0 }, 300, function () {
+                $dutch.text(dutchOriginalText).animate({ opacity: 1 }, 150);
+            });
+        });
+
+
+
+
+        // PROJECT FILTER CARD
+        const checkboxes = $('#check-list input[type="checkbox"]');
+        console.log(checkboxes);
+        const gridItems = $('#section1 > p');
+        const dunk = new Audio('../audio/dunk.ogg');
+        dunk.preload = 'auto';
+        const check = new Audio('../audio/sweep2.wav');
+        check.preload = 'auto';
+        check.playbackRate = 3;
+
+
+        function updateVisibility() {
+            // Get an array of selected filters using data-filter attribute
+            const selectedFilters = checkboxes.filter(':checked');
+            // console.log('Selected Checkboxes:', selectedFilters);
+            const filtersArray = selectedFilters.map(function () {
+                return $(this).data('filter');
+            }).get();
+            // console.log('Mapped Filters:', filtersArray);
+            gridItems.each(function () {
+                // Get all classes of the current grid item
+                const itemClasses = $(this).attr('class').split(' ');
+
+                // Check if no filters are selected or if any of the item's classes are in the selected filters
+                if (filtersArray.length === 0 || itemClasses.some(c => filtersArray.includes(c))) {
+                    $(this).removeClass('hidden');
+                } else {
+                    $(this).addClass('hidden');
+                }
+            });
+        }
+        updateVisibility();
+        $(checkboxes).on('change', function () {
+            updateVisibility();
+            check.play();
+        });
+        $('#deselect-all').on('click', function () {
+            checkboxes.prop('checked', false);
+            updateVisibility(); // Call updateVisibility to apply changes
+            dunk.play();
+        });
+    });
+
+
+
+
+    // fixSpace('tape2', 'make');
+    // fixSpace('pushpin', 'take');
+
+
+    // function fixSpace(spaceTakerId, action) {
+    //     var spaceTaker = document.getElementById(spaceTakerId);
+    //     var spacer = document.getElementById(spaceTakerId + "-spacer");
+    //     // var parentElement = document.getElementById(spaceTakerId).parentElement; //ID the parent element
+
+    //     // Retrieve the value of the height attribute from the space-taker
+    //     var takerHeight = (parseInt(window.getComputedStyle(spaceTaker).getPropertyValue('height'))) * 0.7;
+    //     console.log(spaceTaker, takerHeight);
+    //     // Retrieve the value of the css attribute top from the space-taker
+    //     var takerTop = 0;
+    //     // parseInt(window.getComputedStyle(spaceTaker).getPropertyValue('top'));
+    //     console.log(spaceTaker, takerTop);
+    //     if (action === "take") {
+    //         spacer.style.paddingTop = '-' + (parseInt(takerHeight) + takerTop) + 'px'; //doesnt work
+    //     } else {
+    //         if (action === "make") {
+    //             spacer.style.paddingTop = (parseInt(takerHeight) - takerTop) + 'px';
+    //         }
+    //     }
+    // }
+
+
+
+
+</script>
+
+</html>

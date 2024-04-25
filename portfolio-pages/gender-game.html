@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-CAN">
+
+<head>
+    <title>Meghan Rennie</title>
+    <link rel="icon" type="image/png" href="..\images\bee.svg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/project-page.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="../js/scripts.js"></script>
+    <script src="../js/slideshow.js"></script>
+    <script src="../js/pop-effect.js"></script>
+
+
+</head>
+
+<body>
+    <div id="hiding-bg"></div>
+    <header class="header">
+        <ul class="tabs group sticky">
+            <li><a href="../primary-pages/about.html">About</a></li>
+            <li><a href="../primary-pages/music.html">Music</a></li>
+            <li class="active"><a href="../primary-pages/projects.html">Projects</a></li>
+        </ul>
+        <div id="name">
+            <a href="../index.html">
+                <h1>Meghan Rennie</h1>
+                <img id="bee" src="..\images\bee.svg">
+            </a>
+        </div>
+    </header>
+    <div class="container content">
+        <main>
+            <div id="portfolio-parent">
+                <div class="basic-padding bump-up">
+                    <div class="portfolio pushpin-holder">
+                        <div class="pushpin tilted">
+                            <div class="pinhead"></div>
+                            <div class="pinbase"></div>
+                            <div class="pinshaft"></div>
+                            <div class="pinpoint"></div>
+                        </div>
+                    </div>
+                    <h2 class="crooked-2 pink project-title">French Vocabulary Gender Game</h2>
+                    <ul class="basic-padding portfolio-list">
+                        <li>Medium: Website</li>
+                        <li>Software used: Visual Studio Code</li>
+                        <li>Project type: Assignment</li>
+                        <li>Year: 2022</li>
+                    </ul>
+                    <a id="check-out" class="basic-padding" href="https://tunafishfrancais.github.io/mot-jeu/"
+                        target="_blank">
+                        <h2 class="project-link basic-padding">Play the game</h2>
+                    </a>
+
+                </div>
+                <div class="basic-padding">
+                    <p class="portfolio-details basic-padding"> All French nouns have a gender (male or female). As
+                        there is no inherent rationale behind which gender a given word has
+                        (at least, no rationale which an anglophone brain can readily grasp), many
+                        French learners find genders difficult to learn. This assignment was an opportunity for
+                        Meghan to hone her French skills whilst creating a useful learning/studying tool for fellow
+                        language learners. She leveraged the visual language of traditional gender norms to
+                        emphasize each vocabulary item's win-state. </p>
+                    <p class="portfolio-details basic-padding"> Simultaneously, this game brushes against the oddness
+                        of gender: "Why is lipstick masculine? Why is pizza feminine?
+                        Why is skeleton masculine, but with a suffix usually corresponding to the feminine? Why is
+                        <i>any</i> word <i>anything</i>?" By introducing her majority-non-French-speaking class to
+                        French
+                        vocabulary--to a system of gendering which provides no clear logic but demands total
+                        adherence--she provoked a broader consideration of the gendered systems already accepted in
+                        our daily lives.
+                    </p>
+                </div>
+
+            </div>
+            <div class="basic-padding bttm-spacer" style="height:min-content">
+                <img class="tape1" src="..\images\tape\tape-corner-white.png">
+                <!-- https://www.w3schools.com/howto/howto_js_slideshow.asp Slideshow container -->
+                <div class="slideshow-container">
+
+                    <!-- Full-width images with number and caption text -->
+                    <div class="mySlides fade" style="display: block;">
+                        <div class="numbertext">1 / 8</div>
+                        <video width=450px height=auto controls>
+                            <source src="..\images\gender-game\game-info-screens.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="text">Information screens</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 8</div>
+                        <img src="..\images\gender-game\in-progress-game.png" style="width:100%">
+                        <div class="text">a game in-progress</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 8</div>
+                        <video width=450px height=auto controls>
+                            <source src="..\images\gender-game\game-colour-responsivity.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="text">Background colour responsivity</div>
+
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">4 / 8</div>
+                        <img class="" src="..\images\gender-game\completed-game.png" style="width:100%">
+                        <div class="text">A perfect-score Game</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">5 / 8</div>
+                        <video width=450px height=auto controls>
+                            <source src="..\images\gender-game\game-viewport-resize.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="text">Viewport Resizing</div>
+                    </div>
+                    <div id="dot-box">
+                        <span class="dot dot-active active-bounce" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span>
+                        <span class="dot" onclick="currentSlide(5)"></span>
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">></a>
+                    <a class="next" onclick="plusSlides(1)">></a>
+                </div>
+            </div>
+
+            <a class="top-spacer" href="../primary-pages/projects.html">
+                <h2 id="back-to-gallery" class="basic-padding">return to gallery</h2>
+            </a>
+        </main>
+
+    </div>
+
+</body>

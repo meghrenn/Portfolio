@@ -1,0 +1,145 @@
+/*--------------------------------PORTFOLIO PROJECT PAGES--------------------------------*/
+.portfolio-details {
+    background-color: var(--yellow);
+}
+
+.portfolio-list {
+    font-family: "Komika-Hand", "Comic Sans MS", "Comic Sans", sans-serif;
+    color: white;
+    padding: 40px 20px 20px 20px;
+}
+
+#portfolio-parent {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 100px;
+    height: min-content;
+    justify-content: space-between;
+    /* gap: 60px; */
+}
+
+/*--------------------------------SLIDESHOW--------------------------------*/
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1500px;
+    position: relative;
+    margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    position: absolute;
+    display: block;
+    top: 50%;
+    cursor: pointer;
+    width: auto;
+    margin-top: -22px;
+    padding: 10px;
+    color: white;
+    font-family: "Bakso-Sapi", 'Arial Rounded MT Bold', "Helvetica Rounded", sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    user-select: none;
+    z-index: 9;
+}
+
+.prev {
+    transform: translateY(-25%) rotate(180deg);
+    text-align: right;
+    left: -7%;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: -7%;
+    transform: translateY(-25%);
+}
+
+.extra-prev {
+    left: -11%;
+}
+
+.extra-next {
+    right: -11%;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    color: var(--yellow);
+    cursor: pointer;
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-family: "Komika-Hand", "Comic Sans MS", "Comic Sans", sans-serif;
+    font-size: 25px;
+    padding: 8px 12px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    display: none;
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    align-self: flex-end;
+    animation-duration: 1s;
+    margin: 0 auto 0 auto;
+    transform-origin: bottom;
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: var(--pink);
+    border-radius: 50%;
+    display: inline-block;
+    bottom: -20px;
+    transition: 0.2s ease;
+}
+
+#dot-box {
+    transform: translateY(50px);
+    margin: auto;
+    text-align: center;
+}
+
+.dots-up {
+    transform: translateY(10px) !important;
+}
+
+
+
+
+
+@media screen and (max-width: 1000px) {
+    main {
+        gap: 75px;
+    }
+
+
+    #portfolio-parent {
+        grid-template-columns: 1fr;
+        gap: 0px;
+    }
+
+    #dot-box {
+        transform: translateY(5em);
+    }
+}

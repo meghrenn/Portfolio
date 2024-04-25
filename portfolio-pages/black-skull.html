@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-CAN">
+
+<head>
+    <title>Meghan Rennie</title>
+    <link rel="icon" type="image/png" href="..\images\bee.svg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/project-page.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="../js/scripts.js"></script>
+    <script src="../js/slideshow.js"></script>
+    <script src="../js/pop-effect.js"></script>
+
+
+</head>
+<style>
+</style>
+
+<body>
+    <header class="header">
+        <ul class="tabs group sticky">
+            <li><a href="../primary-pages/about.html">About</a></li>
+            <li><a href="../primary-pages/music.html">Music</a></li>
+            <li class="active"><a href="../primary-pages/projects.html">Projects</a></li>
+        </ul>
+        <div id="name">
+            <a href="../index.html">
+                <h1>Meghan Rennie</h1>
+                <img id="bee" src="..\images\bee.svg">
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="portfolio-parent">
+            <div class="basic-padding bump-up">
+                <div class="portfolio pushpin-holder">
+                    <div class="pushpin tilted">
+                        <div class="pinhead"></div>
+                        <div class="pinbase"></div>
+                        <div class="pinshaft"></div>
+                        <div class="pinpoint"></div>
+                    </div>
+                </div>
+                <h2 class="crooked-2 dark-green project-title">The Black Skull</h2>
+                <ul class="basic-padding portfolio-list">
+                    <li>Medium: Screen print, hand-bound publication</li>
+                    <!-- (edition of ##) -->
+                    <li>Dimensions: 5.5" x 5.5"</li>
+                    <li>Software used: Krita</li>
+                    <li>Project type: Independent project/assignment</li>
+                    <li>Year: 2023</li>
+                </ul>
+            </div>
+
+            <div class="basic-padding">
+                <!-- https://www.w3schools.com/howto/howto_js_slideshow.asp Slideshow container -->
+                <div class="slideshow-container">
+                    <div class="mySlides fade" style="display: block;">
+                        <div class="numbertext">1 / 8</div>
+                        <img class="pinback-button-scale" src="..\images\black-skull\black-skull-sketches.jpg"
+                            style="width:100%">
+                        <div class="text">Initial Sketches</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 8</div>
+                        <img class="pinback-button-scale" src="..\images\black-skull\black-skull-draft.png"
+                            style="width:100%">
+                        <div class="text">Potential Draft</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 8</div>
+                        <img class="pinback-button-scale" src="..\images\black-skull\black-skull-final.png"
+                            style="width:100%">
+                        <div class="text">Final Design</div>
+                    </div>
+
+                    <!-- <div class="mySlides fade">
+                        <div class="numbertext">4 / 8</div>
+                        <img class="pinback-button-scale" src="..\images\pinback-buttons\be-kind.png"
+                            style="width:100%">
+                        <div class="text">"Be Kind"</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">5 / 8</div>
+                        <img class="pinback-button-scale" src="..\images\pinback-buttons\dirt-child.png"
+                            style="width:100%">
+                        <div class="text">"Dirt Child"</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">6 / 8</div>
+                        <img class="pinback-button-scale" src="..\images\pinback-buttons\i-love-you.png"
+                            style="width:100%">
+                        <div class="text">"I Love You"</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">7 / 8</div>
+                        <img class="pinback-button-scale" src="..\images\pinback-buttons\toe-beans.png"
+                            style="width:100%">
+                        <div class="text">"Toe Beans"</div>
+                    </div> -->
+                    <div style="text-align:center" id="dot-box">
+                        <span class="dot dot-active active-bounce" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <!-- <span class="dot" onclick="currentSlide(4)"></span>
+                        <span class="dot" onclick="currentSlide(5)"></span>
+                        <span class="dot" onclick="currentSlide(6)"></span>
+                        <span class="dot" onclick="currentSlide(7)"></span> -->
+                    </div>
+                    <a class="prev extra-prev" onclick="plusSlides(-1)">></a>
+                    <a class="next extra-next" onclick="plusSlides(1)">></a>
+                </div>
+
+
+            </div>
+        </div>
+        <div>
+            <p class="portfolio-details basic-padding"> “This is the basic nightmare.
+                That fossil is everything that should not be here…and yet it’s here.” </p>
+            <p class="portfolio-details basic-padding">
+                This is how Meghan's archaeology
+                professor
+                introduced his class to The Black Skull. Found in Kenya in 1985, this fossil stunned scientists because
+                it exhibited a
+                mixture of derived and primitive traits—in other words, two sets of traits
+                that, according to what we knew up until that point, should not at all have existed on the same species.
+                It brazenly
+                defied what we thought we knew about our ancestry. If that weren’t enough, it was also coloured black
+                from the
+                magnesium-rick soil in which it fossilized (hence its colloquial name), adding to the uniqueness of its
+                appearance.
+            </p>
+            <p class="portfolio-details basic-padding"> Meghan wrote a short story inspired by The Black Skull's ability
+                to elicit existential horror, then she crafted the cover for
+
+
+            </p>
+            <!-- Scope (edition, paper, and image sizing)
+                ART 2005-A Fall 2023
+• I am still researching different bookbinding methods. I want to do something more complex than a staple saddle
+stitch—potentially thread-sewn binding. I will investigate potential binding methods further over the reading week. -->
+
+            <!-- Since learning about The Black Skull, I’ve become rather fixated on its ability to elicit existential horror. I want to
+write a short story about this fossil, and I want my final assignment for this printmaking course to serve as the
+publication’s cover. Printmaking is the perfect medium to create small-batch publications, as it’s feasible to produce
+editions of multiple prints, yet it maintains the authenticity of being original/handmade work.
+
+ -->
+        </div>
+        <a href="../primary-pages/projects.html">
+            <h2 id="back-to-gallery" class="basic-padding">return to gallery</h2>
+        </a>
+    </main>
+
+
+</body>

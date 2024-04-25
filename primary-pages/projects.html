@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en-CAN">
+
+<head>
+    <title>Meghan Rennie</title>
+    <link rel="icon" type="image/png" href="../images/bee.svg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="../js/scripts.js"></script>
+</head>
+<style>
+    .tape4 {
+        transform: translateX(25%);
+    }
+
+    #pubs,
+    .pub-design h3 {
+        color: var(--orange);
+    }
+
+    #web,
+    .web-design h3 {
+        color: var(--berry);
+    }
+
+    #art,
+    .digital-art h3 {
+        color: var(--dark-green);
+    }
+
+    #logo,
+    .logo-design h3 {
+        color: var(--purple);
+    }
+
+    .project-title {
+        font-size: 40px;
+        box-shadow: 0 10px 10px 2px rgba(0, 0, 0, 0.3);
+        display: inline-block;
+        padding: 5px 10px;
+    }
+
+    #project-parent {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        flex-direction: row;
+        justify-content: space-evenly;
+        row-gap: 75px;
+        column-gap: 10%;
+        /* 35px; */
+        height: min-content;
+        /* padding: 60px 0 60px 0; */
+        margin: auto;
+    }
+
+    .grid-baby {
+        height: 400px;
+        width: 300px;
+    }
+
+    .within-picture-flex {
+        height: 350px;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .project-link {
+        display: inline-block;
+        background-image: url("../images/tape/tape-straight-kraft2.png");
+        background-size: 360px 60px;
+        background-position: center;
+        background-repeat: no-repeat;
+        text-align: center;
+        font-family: "Bakso-Sapi", 'Arial Rounded MT Bold', "Helvetica Rounded", sans-serif;
+    }
+
+
+    #deselect-all:hover {
+        color: var(--blue);
+    }
+
+    #i-made-this {
+        display: block;
+        position: absolute;
+        width: 250px;
+        transform: translateX(-8%) translateY(25%);
+    }
+
+    /* #peep {
+        display: block;
+        position: absolute;
+        width: 250px;
+        transform: translateX(55vw) translateY(-74.2%);
+        z-index: 10;
+    } */
+
+    #peep {
+        width: 300px;
+        transform: translateY(-88.5%);
+        right: 10vw;
+        z-index: 10;
+        transition: width 0.2s ease;
+    }
+
+    #ooh-bubble {
+        transform: translateY(-300%);
+        right: 10vw;
+    }
+
+    #made-this-bubble {
+        transform: translateY(-40%);
+        right: 10vw;
+    }
+
+    /* #ooh-bubble {
+        transform: translateX(69vw) translateY(-140%);
+    } */
+
+
+
+
+
+
+
+    @media (max-aspect-ratio: 1) {
+
+
+        /* @media screen and (max-width: 750px) { */
+        #project-parent {
+            /* gap: 100px; */
+            z-index: 1;
+            position: relative;
+        }
+
+
+
+        /* @media screen and (max-width: 1000px) { */
+
+        #peep {
+            width: 250px;
+        }
+
+        #categories-parent {
+            grid-template-columns: 1fr 1fr;
+            gap: 5px;
+        }
+
+        /* @media screen and (max-width: 1200px) { */
+        #categories-parent {
+            gap: 0;
+        }
+
+
+
+    }
+
+
+
+
+
+    /* @media (max-aspect-ratio: 0.86) { */
+    @media (max-aspect-ratio: 0.7) {
+        /* #check-list {
+15px 15px 15px 0
+display: none;
+        }
+
+        #select-list {
+            display: inline-block;
+            margin: auto;
+        } */
+
+        /* #project-filter div {
+            padding: 0 7px;
+        } */
+
+        /* .check {
+            width: 50px;
+        } */
+        #check-list {
+            row-gap: 20px;
+            column-gap: 0;
+            padding-left: 0;
+            padding-right: 0;
+            /* width: 110%; */
+            width: fit-content;
+            grid-template-columns: 100px 150px;
+        }
+
+        li {
+            font-size: 18px;
+        }
+
+        input[type="checkbox"] {
+            width: 15px;
+            height: 15px;
+        }
+
+        #deselect-all {
+            font-size: 20px;
+            justify-self: right;
+        }
+
+        .tape4 {
+            transform: translateX(3%);
+        }
+
+        #peep {
+            width: 200px;
+            transform: translateX(45vw) translateY(-88.5%);
+            right: initial;
+        }
+
+        #ooh-bubble {
+            transform: translateX(65vw) translateY(-300%);
+            right: initial;
+        }
+
+    }
+</style>
+
+<body class="flex-parent">
+    <header class="header" id="myHeader">
+        <ul class="tabs group sticky">
+            <li><a href="about.html">About</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li class="active"><a href="projects.html">Projects</a></li>
+        </ul>
+        <div id="name">
+            <a href="../index.html">
+                <h1>Meghan Rennie</h1> <img id="bee" src="../images/bee.svg">
+            </a>
+        </div>
+    </header>
+    <!-- <div id="bg">
+        <div class="background-paper" id="paper5"></div>
+        <div class="background-paper" id="paper6"></div>
+        <div class="background-paper" id="paper7"></div>
+        <div class="background-paper" id="paper8"></div>
+        <img class="cartoon-meghans" id="i-made-this" src="images/cartoon-meghans/pop-in-side.svg"
+            alt="A cartoon representation of Meghan">
+        <div class="oval-speech" id="made-this-bubble">
+            <p>Look what<br>I made!</p>
+        </div>
+    </div> -->
+    <div class="content">
+        <main class="container2">
+            <div id="project-filter" class="card basic-padding">
+                <img class="tape4" src="../images/tape/tape-straight-kraft2.png">
+                <h2>Sort by project type:</h2>
+                <div class="basic-padding" style="width:fit-content">
+                    <ul id="check-list">
+                        <li class="check"><input type="checkbox" data-filter="logo-design">Logos</li>
+                        <li class="check"><input type="checkbox" data-filter="pub-design">Publications</li>
+                        <li class="check"><input type="checkbox" data-filter="web-design">Web</li>
+                        <li class="check"><input type="checkbox" data-filter="digital-art">Digital Art</li>
+                        <li class="check"><input type="checkbox" data-filter="buttons">Buttons</li>
+                        <li id="deselect-all" class="deselect-all">Deselect All </li>
+                    </ul>
+                    <select id="select-list">
+                        <option value="logo-design">Logos</option>
+                        <option value="pub-design">Publications</option>
+                        <option value="web-design">Web</option>
+                        <option value="digital-art">Digital Art</option>
+                        <option value="buttons">Buttons</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div id="project-parent">
+                <a href="../portfolio-pages/pinback-buttons.html" class="digital-art buttons flexy">
+                    <div class="grid-baby projects crooked5">
+                        <div class="pushpin tilted">
+                            <div class="pinhead"></div>
+                            <div class="pinbase"></div>
+                            <div class="pinshaft"></div>
+                            <div class="pinpoint"></div>
+                        </div>
+                        <div class="within-picture-flex">
+                            <img class="picture-padding" src="../images/thumbnails/all-pins.jpg"
+                                alt="A collection of 7 circular designs for pinback buttons">
+                            <h3 class="caption-padding flex-bttm">Pinback Buttons</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="../portfolio-pages/gender-game.html" class="web-design flexy">
+                    <div class="grid-baby projects">
+                        <div class="pushpin tilted">
+                            <div class="pinhead"></div>
+                            <div class="pinbase"></div>
+                            <div class="pinshaft"></div>
+                            <div class="pinpoint"></div>
+                        </div>
+                        <div class="within-picture-flex">
+                            <img class="picture-padding" src="../images/thumbnails/gender-game-thumbnail.jpg"
+                                alt="A screenshot of a French language game.">
+                            <h3 class="caption-padding flex-bttm">The Gender Game</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="../portfolio-pages/prairie-invasions.html" class="pub-design flexy">
+                    <div class="grid-baby projects crooked3">
+                        <div class="pushpin tilted">
+                            <div class="pinhead crooked-2"></div>
+                            <div class="pinbase crooked-2"></div>
+                            <div class="pinshaft crooked-2"></div>
+                            <div class="pinpoint"></div>
+                        </div>
+                        <div class="within-picture-flex">
+                            <img class="picture-padding" src="../images/thumbnails/prairie-invasions-thumbnail.jpg"
+                                alt="One hand holds a paperback book open to a two-page photographic spread">
+                            <h3 class="caption-padding flex-bttm">Prairie Invasions</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="../portfolio-pages/nmed.html" class="logo-design flexy">
+                    <div class="grid-baby projects crooked-2">
+                        <div class="pushpin tilted">
+                            <div class="pinhead crooked5"></div>
+                            <div class="pinbase crooked5"></div>
+                            <div class="pinshaft crooked5"></div>
+                            <div class="pinpoint"></div>
+                        </div>
+                        <div class="within-picture-flex">
+                            <img class="picture-padding flexy top-spacer"
+                                src="../images/thumbnails/nmed-department-thumbnail.png"
+                                alt="the logo for the University of Lethbridge's New Media Department. The logo depicts the partially-overlapping letters NMED, which are coloured blue, red/orange, yellow, and green, respectively.">
+                            <h3 class="caption-padding flexy">New Media Department</h3>
+                        </div>
+                    </div>
+                </a>
+                <a href="../portfolio-pages/globs.html" class="digital-art flexy">
+                    <div class="grid-baby projects crooked5">
+                        <div class="pushpin tilted">
+                            <div class="pinhead pink"></div>
+                            <div class="pinbase pink"></div>
+                            <div class="pinshaft pink"></div>
+                            <div class="pinpoint"></div>
+                        </div>
+                        <div class="within-picture-flex">
+                            <img class="picture-padding" src="../images/thumbnails/glob-thumbnail.png"
+                                alt="A digital art piece depicting a dark purple orb suspending in a dripping glob of bright orange.">
+                            <h3 class="caption-padding flex-bttm">Globs</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="../portfolio-pages/apologetically-unavailable.html" class="web-design flexy">
+                    <div class="grid-baby projects">
+                        <div class="pushpin tilted">
+                            <div class="pinhead pink"></div>
+                            <div class="pinbase pink"></div>
+                            <div class="pinshaft pink"></div>
+                            <div class="pinpoint"></div>
+                        </div>
+                        <div class="within-picture-flex">
+                            <img class="picture-padding"
+                                src="../images/thumbnails/apologetically-unavailable-thumbnail.jpg"
+                                alt="The landing page to the Apologetically Unavailable website. It depicts a written letter from Meghan to the site's visitor, apologizing for not responding to their emails/messages.">
+                            <h3 class="caption-padding flex-bttm">Apologetically Unavailable</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="../portfolio-pages/climate-story.html" class="pub-design flexy">
+                    <div class="grid-baby projects crooked5">
+                        <div class="pushpin tilted">
+                            <div class="pinhead pink"></div>
+                            <div class="pinbase pink"></div>
+                            <div class="pinshaft pink"></div>
+                            <div class="pinpoint"></div>
+                        </div>
+                        <div class="within-picture-flex">
+                            <img class="picture-padding" src="../images/thumbnails/climate-story-title-thumbnail.jpg"
+                                alt="The front cover of the publication Our Climate Story: Earth Day 2022 Zine. The cover depicts light green text, filling up the ">
+                            <h3 class="caption-padding flex-bttm">Our Climate Story</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="../portfolio-pages/an-aquila-sundered.html" class="logo-design flexy">
+                    <div class="grid-baby projects crooked-2">
+                        <div class="pushpin tilted">
+                            <div class="pinhead pink"></div>
+                            <div class="pinbase pink"></div>
+                            <div class="pinshaft pink"></div>
+                            <div class="pinpoint"></div>
+                        </div>
+                        <div class="within-picture-flex">
+                            <img class="picture-padding" src="../images/thumbnails/an-aquila-sundered-thumbnail.png"
+                                alt="The logo for An Aquila Sundered">
+                            <h3 class="caption-padding flex-bttm">An Aquila Sundered</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- <a href="../portfolio-pages/portfolio-website.html" class="web-design flexy">
+                    <div class="grid-baby projects crooked3">
+                        <div class="pushpin tilted">
+                            <div class="pinhead pink"></div>
+                            <div class="pinbase pink"></div>
+                            <div class="pinshaft pink"></div>
+                            <div class="pinpoint"></div>
+                        </div>
+                        <img class="picture-padding" src="../images/thumbnails/bee-name-transparent.gif"
+                            alt="Meghan's logo">
+                        <h3 class="caption-padding flex-bttm">Digital Portfolio</h3>
+                    </div>
+                </a> -->
+
+                <a href="../portfolio-pages/drawing-system.html" class="digital-art flexy">
+                    <div class="grid-baby projects">
+                        <div class="pushpin tilted">
+                            <div class="pinhead pink"></div>
+                            <div class="pinbase pink"></div>
+                            <div class="pinshaft pink"></div>
+                            <div class="pinpoint"></div>
+                        </div>
+                        <div class="within-picture-flex">
+                            <img class="picture-padding" src="../images/thumbnails/drawing-system-thumbnail.jpg"
+                                alt="Abstract digital art consisting of multicoloured bezier curves on a gray background">
+                            <h3 class="caption-padding flex-bttm">Drawing System</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="../portfolio-pages/black-skull.html" class="pub-design flexy">
+                    <div class="grid-baby projects crooked5">
+                        <div class="pushpin tilted">
+                            <div class="pinhead pink"></div>
+                            <div class="pinbase pink"></div>
+                            <div class="pinshaft pink"></div>
+                            <div class="pinpoint"></div>
+                        </div>
+                        <div class="within-picture-flex">
+                            <img class="picture-padding" src="../images/thumbnails/black-skull-thumbnail.png"
+                                alt="The fossilized skull of a pre-human creature. Contour lines draw attention to its dark, void-like eye sockets.">
+                            <h3 class="caption-padding flex-bttm">The Black Skull</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="zines.html" class="digital-art flexy">
+                    <div class="grid-baby projects">
+                        <div class="pushpin tilted">
+                            <div class="pinhead pink"></div>
+                            <div class="pinbase pink"></div>
+                            <div class="pinshaft pink"></div>
+                            <div class="pinpoint"></div>
+                        </div>
+                        <div class="within-picture-flex">
+                            <img class="zine-padding half-up" src="../images/thumbnails/zines-thumbnail.jpg"
+                                alt="An eight-page comic booklet featuring bright and colourful cartoons.">
+                            <h3 class="caption-padding flex-bttm">Short Zines</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <a data-target="section1">
+                <h2 id="back-to-top" class="basic-padding">Back to top</h2>
+            </a>
+        </main>
+        <footer>
+            <div>
+                <img class="cartoon-meghans" id="peep" src="../images/cartoon-meghans/peep.svg"
+                    alt="A cartoon representation of Meghan">
+                <div class="oval-speech" id="ooh-bubble">
+                    <p>Ooh....</p>
+                </div>
+            </div>
+            <p class="basic-padding">meghancrennie@gmail.com</p>
+        </footer>
+    </div>
+</body>
+<script>
+    $(document).ready(function () {
+        // THUMBNAIL MOVEMENTS
+        // Select all .project elements
+        let isHidden = false;
+        const $allProjects = $('.projects');
+        const sweep1 = new Audio('../audio/sweep1.wav');
+        sweep1.playbackRate = 3;
+        sweep1.preload = "auto";
+
+        // Add a mouseover event listener to trigger the jostle effect on the hovered project
+        $allProjects.on('mouseover', function () {
+            // Remove the "jostle" class from all .project elements
+            $allProjects.removeClass(' jostle ');
+
+            sweep1.play();
+
+            // Add the "jostle" class to the hovered .project element
+            $(this).addClass(' jostle ');
+        });
+        // Add a mouseout event listener to reset the elements to their original state
+        $allProjects.on('mouseout', function () {
+            // Remove the "jostle" class from all .project elements
+            $allProjects.removeClass(' jostle ');
+        });
+
+
+        // PROJECT FILTER CARD
+        const checkboxes = $('#check-list input[type="checkbox"]');
+        console.log(checkboxes);
+        const gridItems = $('#project-parent > a');
+        const dunk = new Audio('../audio/dunk.ogg');
+        dunk.preload = 'auto';
+        const check = new Audio('../audio/sweep2.wav');
+        check.preload = 'auto';
+        check.playbackRate = 3;
+
+
+        function updateVisibility() {
+            // Get an array of selected filters using data-filter attribute
+            const selectedFilters = checkboxes.filter(':checked');
+            // console.log('Selected Checkboxes:', selectedFilters);
+            const filtersArray = selectedFilters.map(function () {
+                return $(this).data('filter');
+            }).get();
+            // console.log('Mapped Filters:', filtersArray);
+            gridItems.each(function () {
+                // Get all classes of the current grid item
+                const itemClasses = $(this).attr('class').split(' ');
+
+                // Check if no filters are selected or if any of the item's classes are in the selected filters
+                if (filtersArray.length === 0 || itemClasses.some(c => filtersArray.includes(c))) {
+                    $(this).removeClass('hidden');
+                } else {
+                    $(this).addClass('hidden');
+                }
+            });
+        }
+        updateVisibility();
+        $(checkboxes).on('change', function () {
+            updateVisibility();
+            check.play();
+        });
+        $('#deselect-all').on('click', function () {
+            checkboxes.prop('checked', false);
+            updateVisibility(); // Call updateVisibility to apply changes
+            dunk.play();
+        });
+    });
+</script>
+
+</html>

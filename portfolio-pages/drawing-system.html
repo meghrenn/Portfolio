@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-CAN">
+
+<head>
+    <title>Meghan Rennie</title>
+    <link rel="icon" type="image/png" href="..\images\bee.svg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/project-page.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="../js/scripts.js"></script>
+    <script src="../js/slideshow.js"></script>
+    <script src="../js/pop-effect.js"></script>
+
+
+</head>
+
+<body>
+    <header class="header">
+        <ul class="tabs group sticky">
+            <li><a href="../primary-pages/about.html">About</a></li>
+            <li><a href="../primary-pages/music.html">Music</a></li>
+            <li class="active"><a href="../primary-pages/projects.html">Projects</a></li>
+        </ul>
+        <div id="name">
+            <a href="../index.html">
+                <h1>Meghan Rennie</h1>
+                <img id="bee" src="..\images\bee.svg">
+            </a>
+        </div>
+    </header>
+    <div class="container content">
+        <main>
+            <div id="portfolio-parent">
+                <div class="basic-padding bump-up">
+                    <div class="portfolio pushpin-holder">
+                        <div class="pushpin tilted">
+                            <div class="pinhead"></div>
+                            <div class="pinbase"></div>
+                            <div class="pinshaft"></div>
+                            <div class="pinpoint"></div>
+                        </div>
+                    </div>
+                    <h2 class="crooked-2 berry project-title">Generative Art Drawing System</h2>
+                    <ul class="basic-padding portfolio-list">
+                        <li>Medium: Website</li>
+                        <li>Software used: Processing</li>
+                        <li>Project type: Assignment</li>
+                        <li>Year: 2021</li>
+                    </ul>
+                </div>
+                <div class="basic-padding">
+                    <p class="portfolio-details basic-padding"> Meghan created this Processing sketch in response to a
+                        project
+                        prompt. The prompt asked for a drawing system in which the viewer
+                        could interact with the sketch to create different images. Instead of coding
+                        different viewer-controlled brushes to allow "traditional drawing" within the sketch, Meghan
+                        coded a few malleable bezier curves that are influenced by the mouse's position. These
+                        funky bending lines respond to mouse movements, but still conform to some of their own
+                        parameters (e.g., the coordinates of their anchor points, etc.). This results in the
+                        creation of abstract art images that are half created by the viewer's own intentions and
+                        choices, and half created by the code's response to the user's actions. The viewer can
+                        slowly learn to understand the code's behaviour as they play within the sketch, but there
+                        is still some surprise and whimsy inherent to the process and its end result. The images above
+                        are
+                        example pieces Meghan made with the sketch.
+                    </p>
+                </div>
+            </div>
+            <div class="basic-padding" style="height:min-content">
+                <!-- https://www.w3schools.com/howto/howto_js_slideshow.asp Slideshow container -->
+                <div class="slideshow-container">
+
+                    <!-- Full-width images with number and caption text -->
+                    <div class="mySlides fade" style="display: block;">
+                        <div class="numbertext">1 / 5</div>
+                        <img src="..\images\drawing-system\drawing-system1.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 5</div>
+                        <img src="..\images\drawing-system\drawing-system2.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 5</div>
+                        <img src="..\images\drawing-system\drawing-system3.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">4 / 5</div>
+                        <img src="..\images\drawing-system\drawing-system4.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">5 / 5</div>
+                        <img src="..\images\drawing-system\drawing-system5.jpg" style="width:100%">
+                    </div>
+                    <div id="dot-box" class="dots-up">
+                        <span class="dot dot-active active-bounce" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span>
+                        <span class="dot" onclick="currentSlide(5)"></span>
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">></a>
+                    <a class="next" onclick="plusSlides(1)">></a>
+                </div>
+            </div>
+            <a href="../primary-pages/projects.html">
+                <h2 id="back-to-gallery" class="basic-padding">return to gallery</h2>
+            </a>
+        </main>
+        <!-- <a href="../projects.html">
+            <h2 id="back-to-gallery" class="basic-padding">return to gallery</h2>
+        </a> -->
+        <!-- <img class="tape1point5" src="..\images\tape\tape-corner-white.png"> -->
+    </div>
+</body>

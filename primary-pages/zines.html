@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-CAN">
+
+<head>
+    <title>Meghan Rennie</title>
+    <link rel="icon" type="image/png" href="../images/bee.svg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/project-page.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="../js/scripts.js"></script>
+</head>
+<style>
+    #portfolio-parent {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .zine-list {
+        font-family: "Komika-Hand", "Comic Sans MS", "Comic Sans", sans-serif;
+        color: white;
+        /* padding: 40px 20px 20px 20px; */
+        margin: auto;
+        /* width: max-content; */
+        max-width: 80vw;
+    }
+
+    .zine-list li {
+        /* width: max-content; */
+        max-width: 80vw;
+    }
+
+    #zine-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* gap: 20px; */
+        height: 120%;
+    }
+
+    #zine-parent {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 40px;
+        height: min-content;
+        padding: 50px 0 50px 0;
+        margin: auto;
+    }
+
+    .zine-grid-baby {
+        max-width: 295px;
+    }
+
+    @media screen and (max-width: 1200px) {
+        #zine-parent {
+            max-width: 850px;
+        }
+
+        #zine-info {
+            height: 100%;
+            gap: 50px;
+        }
+    }
+
+    @media screen and (max-width: 1000px) {
+        #portfolio-parent {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<body>
+    <header class="header" id="myHeader">
+        <ul class="tabs group sticky">
+            <li><a href="about.html">About</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li class="active"><a href="projects.html">Projects</a></li>
+        </ul>
+        <div id="name">
+            <a href="../index.html">
+                <h1>Meghan Rennie</h1> <img id="bee" src="../images/bee.svg">
+            </a>
+        </div>
+    </header>
+    <main class="container">
+        <div id="portfolio-parent">
+            <div id="zine-info" class="bump-up">
+                <div>
+                    <div class="portfolio pushpin-holder">
+                        <div class="pushpin tilted">
+                            <div class="pinhead"></div>
+                            <div class="pinbase"></div>
+                            <div class="pinshaft"></div>
+                            <div class="pinpoint"></div>
+                        </div>
+                    </div>
+                    <h2 class="crooked3 berry project-title">8-Page Zines</h2>
+                </div>
+                <div>
+                    <h2 class="about basic-padding orange">What is a Zine?</h2>
+                    <p class="portfolio-details basic-padding"> "Zine" is pronounced like maga<i>zine</i>. Zines are
+                        wonderful little booklets that anyone can make about anything: comics, collage, prose,
+                        poetry, diary, etc., etc. Check them out!
+                    </p>
+                </div>
+
+
+                <!-- <div class="about card basic-padding" id="fave-card">
+                        <p> Canadian Zine Scenes:</p>
+                        <ul class="basic-padding">
+                            <li><a href="https://archive.org/details/in.ernet.dli.2015.350305/page/n9/mode/2up"></a>
+                            </li>
+                            <li><a href="https://youtu.be/9t9HQMGfGrY?si=9z6s_13jbctA3n6d">“All I Really Want” by
+                                    Alanis Morissette</a></li>
+                            <li><a href="https://youtu.be/j2TUAsVksWQ?si=D6j6FTHyi60NpHUa">Pond
+                                    snail (Lymnaeidae)</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="about card basic-padding" id="fave-card">
+                        <p> Zine History</p>
+                        <ul class="basic-padding">
+                            <li><a href="https://www.mtroyal.ca/Summit/zine.htm">Mount Royal Zine Library</a>
+                            </li>
+                            <li><a href="https://youtu.be/9t9HQMGfGrY?si=9z6s_13jbctA3n6d">“All I Really Want” by
+                                    Alanis Morissette</a></li>
+                            <li><a href="https://youtu.be/j2TUAsVksWQ?si=D6j6FTHyi60NpHUa">Pond
+                                    snail (Lymnaeidae)</a></li>
+                        </ul>
+                    </div> -->
+            </div>
+            <div>
+                <a id="check-out" class="basic-padding"
+                    href="https://www.canadacomicsol.org/comic-book-resources/zine-resources/">
+                    <h2 class="project-link basic-padding">Zine Resources</h2>
+                </a>
+                <ol class="basic-padding zine-list">
+                    <li>Print out the zine of your choice.</li>
+                    <li>Fold into a booklet (watch <a
+                            href="https://www.youtube.com/embed/h2_QP5T6m-Q?si=YGMSeBKj4a13RPoh">this
+                            video</a> to learn how).
+                    </li>
+                    <li>Cherish your zine forever.</li>
+                </ol>
+                <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/h2_QP5T6m-Q?si=YGMSeBKj4a13RPoh"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe> -->
+            </div>
+        </div>
+        <div id="zine-parent" class="basic-padding basic-padding">
+            <a href="../images/zines/business-card.png" target="_blank" download="meghan-rennie-zine-business-card"
+                class="flexy zine-baby-horizontal">
+                <div class="zine-grid-baby projects crooked5">
+                    <div class="pushpin tilted">
+                        <div class="pinhead crooked-2"></div>
+                        <div class="pinbase crooked-2"></div>
+                        <div class="pinshaft crooked-2"></div>
+                        <div class="pinpoint"></div>
+                    </div>
+                    <img class="zine-padding" src="../images/zines/business-card.png">
+                    <h3 class="basic-padding">"Business Card' (2023)</h3>
+                </div>
+            </a>
+            <a href="../images/zines/bad-dog.jpg" target="_blank" download="meghan-rennie-zine-bad-dog"
+                class="flexy zine-baby-horizontal">
+                <div class="zine-grid-baby projects crooked-2">
+                    <div class="pushpin tilted">
+                        <div class="pinhead crooked-2"></div>
+                        <div class="pinbase crooked-2"></div>
+                        <div class="pinshaft crooked-2"></div>
+                        <div class="pinpoint"></div>
+                    </div>
+                    <img class="zine-padding" src="../images/zines/bad-dog.jpg">
+                    <h3 class="basic-padding">Bad Dog (2018)</h3>
+                </div>
+            </a>
+            <a href="../images/zines/i-miss-my-cat.jpg" target="_blank" download="meghan-rennie-zine-i-miss-my-cat"
+                class="flexy">
+                <div class="zine-grid-baby projects crooked-2">
+                    <div class="pushpin tilted">
+                        <div class="pinhead crooked-2"></div>
+                        <div class="pinbase crooked-2"></div>
+                        <div class="pinshaft crooked-2"></div>
+                        <div class="pinpoint"></div>
+                    </div>
+                    <img class="zine-padding" src="../images/zines/i-miss-my-cat.jpg">
+                    <h3 class="basic-padding">I Miss My Cat (2019)</h3>
+                </div>
+            </a>
+            <a href="../images/zines/bored-rainbow.jpg" target="_blank" download="meghan-rennie-zine-bored-rainbow"
+                class="flexy">
+                <div class="zine-grid-baby projects crooked3">
+                    <div class="pushpin tilted">
+                        <div class="pinhead crooked-2"></div>
+                        <div class="pinbase crooked-2"></div>
+                        <div class="pinshaft crooked-2"></div>
+                        <div class="pinpoint"></div>
+                    </div>
+                    <img class="zine-padding" src="../images/zines/bored-rainbow.jpg">
+                    <h3 class="basic-padding">Bored Rainbow (2019)</h3>
+                </div>
+            </a>
+            <a href="../images/zines/cowspiracy.jpg" target="_blank" download="meghan-rennie-zine-cowspiracy"
+                class="flexy zine-baby-horizontal">
+                <div class="zine-grid-baby projects">
+                    <div class="pushpin tilted">
+                        <div class="pinhead crooked-2"></div>
+                        <div class="pinbase crooked-2"></div>
+                        <div class="pinshaft crooked-2"></div>
+                        <div class="pinpoint"></div>
+                    </div>
+                    <img class="zine-padding" src="../images/zines/cowspiracy.jpg">
+                    <h3 class="basic-padding">Cowspiracy (2019)</h3>
+                </div>
+            </a>
+        </div>
+        <a href="projects.html">
+            <h2 id="back-to-gallery" class="basic-padding">return to gallery</h2>
+        </a>
+    </main>
+    <script>
+        // THUMBNAIL MOVEMENTS
+        // Select all .project elements
+        let isHidden = false;
+        const $allProjects = $('.projects');
+        const sweep1 = new Audio('../audio/sweep1.wav');
+        sweep1.playbackRate = 3;
+        sweep1.preload = "auto";
+
+        // Add a mouseover event listener to trigger the jostle effect on the hovered project
+        $allProjects.on('mouseover', function () {
+            // Remove the "jostle" class from all .project elements
+            $allProjects.removeClass(' jostle ');
+
+            sweep1.play();
+
+            // Add the "jostle" class to the hovered .project element
+            $(this).addClass(' jostle ');
+        });
+        // Add a mouseout event listener to reset the elements to their original state
+        $allProjects.on('mouseout', function () {
+            // Remove the "jostle" class from all .project elements
+            $allProjects.removeClass(' jostle ');
+        });
+    </script>
+
+</body>

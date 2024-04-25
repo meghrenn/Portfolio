@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-CAN">
+
+<head>
+    <title>Meghan Rennie</title>
+    <link rel="icon" type="image/png" href="..\images\bee.svg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/project-page.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="../js/scripts.js"></script>
+    <script src="../js/slideshow.js"></script>
+    <script src="../js/pop-effect.js"></script>
+
+
+</head>
+
+<body>
+    <header class="header">
+        <ul class="tabs group sticky">
+            <li><a href="../primary-pages/about.html">About</a></li>
+            <li><a href="../primary-pages/music.html">Music</a></li>
+            <li class="active"><a href="../primary-pages/projects.html">Projects</a></li>
+        </ul>
+        <div id="name">
+            <a href="../index.html">
+                <h1>Meghan Rennie</h1>
+                <img id="bee" src="..\images\bee.svg">
+            </a>
+        </div>
+    </header>
+    <main class="container">
+        <div id="portfolio-parent">
+            <div>
+                <div class="portfolio pushpin-holder">
+                    <div class="pushpin tilted">
+                        <div class="pinhead"></div>
+                        <div class="pinbase"></div>
+                        <div class="pinshaft"></div>
+                        <div class="pinpoint"></div>
+                    </div>
+                </div>
+                <h2 class="crooked-2 pink project-title">Meghan's Digital Portfolio</h2>
+                <ul class="basic-padding portfolio-list">
+                    <li>Medium: Website</li>
+                    <li>Software used: Visual Studio Code</li>
+                    <li>Project type: Assignment</li>
+                    <li>Year: 2023</li>
+                </ul>>
+            </div>
+            <div style="height:min-content">
+                <!-- https://www.w3schools.com/howto/howto_js_slideshow.asp Slideshow container -->
+                <div class="slideshow-container">
+                    <div class="mySlides fade" style="display: block;">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="..\images\portfolio\portfolio-about.png" style="width:100%">
+                        <div class="text">About Page</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img src="..\images\portfolio\portfolio-projects.png" style="width:100%">
+                        <div class="text">Project Gallery</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 3</div>
+                        <img src="..\images\portfolio\portfolio-example.png" style="width:100%">
+                        <div class="text">Project Information Page</div>
+                    </div>
+                    <div id="dot-box">
+                        <span class="dot dot-active active-bounce" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">></a>
+                    <a class="next" onclick="plusSlides(1)">></a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p class="portfolio-details basic-padding"> Meghan created the website that you're on right now Coding her
+                portfolio from scratch with HTML, CSS, and Javascript allows her to better embody her personal
+                branding. Aesthetically, Meghan's portfolio balances the vibes of being silly and busy, whimsical
+                and capable, spunky and productive. It embodies the aura of the CEO of kindergarten, of a golden
+                retriever with a PhD–someone goofy but with whom you can have intelligent conversations and on whom
+                you can rely as a collaborator, commission-taker, or employee.
+            </p>
+            <p class="portfolio-details basic-padding"> Meghan expresses herself visually through the ample use of warm,
+                bright colours and busy/messy layouts. Elements should replicate the roughness of handmade goods and
+                show evidence of imperfections/revisions/building upon rough drafts.
+            </p>
+        </div>
+        <a href="../primary-pages/projects.html">
+            <h2 id="back-to-gallery" class="basic-padding">return to gallery</h2>
+        </a>
+    </main>
+
+
+</body>

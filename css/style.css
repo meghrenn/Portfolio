@@ -1,0 +1,1342 @@
+/*Use of :root to set variables as described here: https://www.w3schools.com/css/css3_variables.asp*/
+:root {
+    --berry: #bd3559;
+    --red: #e65c38;
+    --orange: #f99027;
+    --yellow: #f9d349;
+    --light-green: #9ec04d;
+    --dark-green: #109e68;
+    --bee-wings: #a8d6cd;
+    --blue: #6689c3;
+    --purple: #554995;
+    --pink: #f6a5c5;
+    --brown: #a6743f;
+    --gray: #979797;
+}
+
+.red {
+    background-color: var(--red);
+}
+
+.orange {
+    background-color: var(--orange);
+}
+
+.yellow {
+    background-color: var(--yellow);
+}
+
+.light-green {
+    background-color: var(--light-green);
+}
+
+.dark-green {
+    background-color: var(--dark-green);
+    color: white;
+}
+
+.bee-wings {
+    background-color: var(--bee-wings);
+}
+
+.blue {
+    background-color: var(--blue);
+    color: white;
+}
+
+.purple {
+    background-color: var(--purple);
+    color: white;
+}
+
+.berry {
+    background-color: var(--berry);
+    color: white;
+}
+
+.pink {
+    background-color: var(--pink);
+}
+
+@font-face {
+    font-family: "Komika-Hand";
+    font-style: normal;
+    font-weight: normal;
+    src: local('Komika Hand'), url("..\typefaces\komika_hands") format('truetype');
+}
+
+
+@font-face {
+    font-family: "Bakso-Sapi";
+    font-style: normal;
+    font-weight: normal;
+    src: local('BaksoSapi'), url("..\typefaces\BaksoSapi.otf") format('opentype');
+}
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------GENERAL STYLE--------------------------------*/
+
+* {
+    box-sizing: border-box;
+    border: none;
+}
+
+html {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+body,
+html {
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* header {
+    width: 100%;
+} */
+
+img {
+    max-width: 100%;
+}
+
+video {
+    width: 100%;
+}
+
+h1,
+h2,
+ul {
+    margin: 0;
+    font-family: "Bakso-Sapi", 'Arial Rounded MT Bold', "Helvetica Rounded", sans-serif;
+    padding: 0;
+    /* padding thing here may be problematic, need fixing */
+}
+
+h1 {
+    font-size: 70px;
+    display: flex;
+}
+
+h3 {
+    margin: 0;
+    font-family: "Komika-Hand", "Comic Sans MS", "Comic Sans", sans-serif;
+    font-size: 20px;
+    text-align: center;
+
+}
+
+p {
+    margin: 0;
+    font-family: 'Cambria', Georgia, serif;
+}
+
+a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #000000;
+
+}
+
+li {
+    font-size: 20px;
+}
+
+/* .tabs {
+    width: 100%;
+} */
+
+#categories-parent li,
+.tabs li,
+#scroll-list li,
+#music-list li {
+    list-style-type: none;
+    text-align: center;
+    display: inline-block;
+}
+
+#categories-parent li,
+.tabs li,
+#music-list li,
+#scroll-list li {
+    font-size: 27px;
+}
+
+a:hover {
+    color: var(--purple);
+    transition: 0.2s ease;
+}
+
+footer {
+    position: static;
+    width: 100%;
+    z-index: 5;
+    background-color: var(--yellow);
+    bottom: 0;
+}
+
+.shadow {
+    box-shadow: 0 10px 10px 2px rgba(0, 0, 0, 0.3);
+}
+
+/*Adapted from https://codepen.io/teddyzetterlund/pen/YPjEzP*/
+.card {
+    background-image: linear-gradient(180deg, var(--bee-wings) 3.9rem, var(--blue) calc(1rem), var(--blue) calc(4.1rem), transparent 1px), repeating-linear-gradient(0deg, var(--bee-wings), var(--bee-wings) 1.5rem, var(--blue) 1px, var(--blue) calc(1.5rem + 1.5px));
+    box-shadow: 0 10px 10px 2px rgba(0, 0, 0, 0.3);
+    /* height: 12rem; */
+    height: max-content;
+    margin: auto;
+    position: relative;
+    top: 50%;
+    max-width: 550px;
+    /* width: 100%; */
+}
+
+/* --------------------------------PROJECT FILTER CARD--------------------------------*/
+/*Adapted from https://codepen.io/teddyzetterlund/pen/YPjEzP*/
+#check-list {
+    display: inline-block;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 5px;
+    column-gap: 20px;
+
+}
+
+#select-list {
+    display: none;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #000000;
+    border-radius: 0.15em;
+    transform: translateX(-0.5em) translateY(0.15em);
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--yellow);
+    transition: ease;
+    transition-duration: 0.3s;
+}
+
+#deselect-all {
+    font-size: 30px;
+}
+
+#deselect-all:hover {
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.visible {
+    display: grid;
+}
+
+.grid-item.deactivated {
+    display: none;
+}
+
+@media (max-aspect-ratio: 1) {
+    #deselect-all {
+        font-size: 25px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------PAGE BACKGROUND--------------------------------*/
+body {
+    background-image: url("../images/background-images/brown-paper.jpg");
+    background-repeat: repeat;
+}
+
+#paper1 {
+    background: url("../images/background-images/french2.png") no-repeat;
+    background-size: cover;
+    width: 424px;
+    height: 588px;
+    top: 40px;
+    right: -75px;
+}
+
+#paper2 {
+    background: url("../images/background-images/book-and-notes.png") no-repeat;
+    background-size: cover;
+    width: 424px;
+    height: 588px;
+    top: 375px;
+    left: -75px;
+}
+
+#paper3 {
+    background: url("../images/background-images/to-do1.png") no-repeat;
+    background-size: cover;
+    width: 423px;
+    height: 368px;
+    top: 780px;
+    left: 50vw;
+    rotate: 50deg;
+}
+
+#paper4 {
+    background: url("../images/background-images/journal1.png") no-repeat;
+    background-size: cover;
+    width: 424px;
+    height: 588px;
+    top: 1200px;
+    left: -75px;
+    rotate: 90deg;
+}
+
+#paper5 {
+    background: url("../images/background-images/notebook1.png") no-repeat;
+    background-size: cover;
+    width: 424px;
+    height: 588px;
+    top: 1063px;
+    right: -150px;
+    rotate: 200deg;
+}
+
+#paper6 {
+    background: url("../images/background-images/receipt1.png") no-repeat;
+    background-size: cover;
+    width: 276px;
+    height: 191px;
+    top: 900px;
+    left: -10px;
+    rotate: 75deg;
+    z-index: 0;
+}
+
+#paper7 {
+    background: url("../images/background-images/miscellaneous.png") no-repeat;
+    background-size: cover;
+    width: 424px;
+    height: 588px;
+    top: 489px;
+    left: -200px;
+    rotate: -20deg;
+}
+
+#paper8 {
+    background: url("../images/background-images/journal2.png") no-repeat;
+    background-size: cover;
+    width: 424px;
+    height: 588px;
+    top: -100px;
+    right: -50px;
+    rotate: -15deg;
+}
+
+.background-paper {
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+}
+
+
+/*--------------------------------CARTOON ME(GHAN)--------------------------------*/
+.cartoon-meghans {
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.oval-speech {
+    display: inline-block;
+    /* display: block; */
+    padding: 12px 24px;
+    margin: 1em auto 50px;
+    text-align: center;
+    color: #000000;
+    background: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    overflow: hidden;
+    z-index: 5;
+
+}
+
+.oval-speech p {
+    font-family: "Komika-Hand", "Comic Sans MS", "Comic Sans", sans-serif;
+    font-size: 18px;
+    margin: 0;
+    position: relative;
+    z-index: 9;
+}
+
+
+
+
+
+
+/*--------------------------------TAPE--------------------------------*/
+#tape-label1,
+#tape-label2,
+#tape-label3,
+#tape-label4,
+#tape-label5,
+#tape-label6,
+#tape-label7 {
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#tape-label1 {
+    background-image: url("../images/tape/tape-straight-kraft3.png");
+}
+
+#tape-label2,
+#tape-label6 {
+    background-image: url("../images/tape/tape-straight-cream1.png");
+}
+
+#tape-label3 {
+    background-image: url("../images/tape/tape-straight-kraft2.png");
+}
+
+#tape-label4,
+#tape-label7 {
+    background-image: url("../images/tape/tape-straight-cream2.png");
+    align-content: center;
+    display: grid;
+}
+
+#tape-label5 {
+    background-image: url("../images/tape/tape-straight-kraft1.png");
+}
+
+#tape-label1,
+#tape-label2,
+#tape-label3,
+#tape-label5 {
+    background-size: 300px 60px;
+}
+
+#tape-label4 {
+    background-size: 300px 70px;
+}
+
+#tape-label6,
+#tape-label7 {
+    background-size: 100% 80px;
+    padding: 10%;
+}
+
+.tape1 {
+    width: 200px;
+    display: block;
+    position: absolute;
+    transform: translateY(-25%) translateX(-20%);
+    z-index: 5;
+}
+
+.tape1point5 {
+    width: 200px;
+    display: block;
+    position: relative;
+    rotate: 90deg;
+    transform: translateY(-458%) translateX(-305%);
+    z-index: 5;
+}
+
+.tape1point6 {
+    width: 200px;
+    display: block;
+    position: absolute;
+    rotate: 90deg;
+    transform: translateY(-190%) translateX(-10%);
+    z-index: 5;
+}
+
+.tape2 {
+    width: 400px;
+    opacity: 80%;
+    position: absolute;
+    transform: translateX(37.5%);
+    top: -56px;
+    rotate: 2deg;
+    z-index: 5;
+
+}
+
+.tape3 {
+    width: 275px;
+    opacity: 80%;
+    rotate: 20deg;
+    display: block;
+    position: absolute;
+    top: -70px;
+    right: -100px;
+    /* Transform looks at the element itself and not the parent. */
+    /*transform: translateY(-40%) translateX(10%)*/
+}
+
+
+.tape4 {
+
+    height: 48px;
+    display: block;
+    position: absolute;
+    /* left: 25%; */
+
+    top: -30px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------SITE NAME--------------------------------*/
+
+#name {
+    display: inline-flex;
+    z-index: 51;
+    position: relative;
+    padding: 15px 20px;
+}
+
+#name a h1 {
+    transform: translateY(10%);
+    font-size: 4.5vw;
+}
+
+#name a {
+    display: flex;
+    align-items: center;
+}
+
+#name a:hover {
+    color: var(--yellow);
+    transition: 0.2s ease;
+}
+
+#bee {
+    height: 4vw;
+    object-fit: contain;
+    align-self: flex-end;
+    animation-duration: 1s;
+    margin: 0 auto 0 auto;
+    transform-origin: bottom;
+    padding: 0 0 0 10px;
+}
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------NAVIGATION BAR--------------------------------*/
+
+
+
+/* Tabs from https://css-tricks.com/tabs-with-round-out-borders/*/
+.tabs li {
+    /* Makes a horizontal row */
+    float: right;
+    display: flex;
+    /* So the psueudo elements can be
+       abs. positioned inside */
+    position: relative;
+    transition: 0.5s ease;
+
+}
+
+.tabs a {
+    /* Make them block level
+       and only as wide as they need */
+    /*float: left;*/
+    padding: 10px 30px;
+    text-decoration: none;
+    /* Default colors */
+    color: #000000;
+    background: var(--pink);
+    /* Only round the top corners */
+    -webkit-border-bttm-left-radius: 15px;
+    -webkit-border-bttm-right-radius: 15px;
+    -moz-border-radius-bttmleft: 15px;
+    -moz-border-radius-bttmright: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.tabs li a {
+    align-self: flex-end;
+    animation-duration: 1s;
+    margin: 0 auto 0 auto;
+    transform-origin: top;
+}
+
+.tabs a:hover {
+    background: #f9d349;
+    text-align: center;
+    padding: 15px 30px;
+    transition: 0.5s;
+}
+
+
+.tabs .active {
+    /* Highest, active tab is on top */
+    z-index: 10;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabs .active a {
+    /* Colors when tab is active */
+    background: #f9d349;
+    text-align: center;
+    padding: 15px 30px;
+    transition: 0.5s;
+}
+
+.tabs li:before,
+.tabs li:after,
+.tabs li a:before,
+.tabs li a:after {
+    /* All pseudo elements are 
+       abs. positioned and on bottom */
+    position: absolute;
+    bottom: 0;
+}
+
+/* Only the first, last, and active
+     tabs need pseudo elements at all */
+.tabs li:last-child:after,
+.tabs li:last-child a:after,
+.tabs li:first-child:before,
+.tabs li:first-child a:before,
+.tabs .active:after,
+.tabs .active:before,
+.tabs .active a:after,
+.tabs .active a:before {
+    content: "";
+}
+
+.tabs .active:before,
+.tabs .active:after {
+    opacity: 0;
+    /* Squares below circles */
+    z-index: 97;
+}
+
+/* Squares */
+.tabs li:before,
+.tabs li:after {
+    opacity: 0;
+    width: 10px;
+    height: 10px;
+}
+
+.tabs li:before {
+    left: -10px;
+}
+
+.tabs li:after {
+    right: -10px;
+}
+
+/* Circles */
+.tabs li a:after,
+.tabs li a:before {
+    width: 20px;
+    height: 20px;
+
+    /* Circles are circular */
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background: rgb(247, 48, 48);
+    opacity: 0;
+
+    /* Circles over squares */
+    z-index: 98;
+}
+
+.tabs .active a:after,
+.tabs .active a:before {
+    background: #85c4dd;
+}
+
+/* First and last tabs have different
+     outside color needs */
+.tabs li:first-child.active a:before,
+.tabs li:last-child.active a:after {
+    background: rgb(194, 227, 30);
+}
+
+.tabs li a:before {
+    left: -20px;
+}
+
+.tabs li a:after {
+    right: -20px;
+}
+
+/*https://www.w3schools.com/howto/howto_js_sticky_header.asp*/
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* width: 100vw; */
+    background-color: rgb(247, 48, 48, 0);
+    z-index: 50;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+/* .sticky+.content {
+    padding-top: 102px;
+} */
+
+
+
+
+
+
+
+
+
+/*--------------------------------PUSHPIN STYLING--------------------------------*/
+.projects {
+    background-color: #ffffff;
+    text-align: center;
+    transform-origin: 50% 5%;
+    transition: transform 0.3s ease;
+    margin: 0 0 20px 0;
+    box-shadow: 0 10px 10px 2px rgba(0, 0, 0, 0.3);
+}
+
+.crooked3 {
+    -ms-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -webkit-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    transform: rotate(3deg);
+}
+
+.crooked5 {
+    -ms-transform: rotate(5deg);
+    -moz-transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    -o-transform: rotate(5deg);
+    transform: rotate(5deg);
+}
+
+.crooked-2 {
+    -ms-transform: rotate(-2deg);
+    -moz-transform: rotate(-2deg);
+    -webkit-transform: rotate(-2deg);
+    -o-transform: rotate(-2deg);
+    transform: rotate(-2deg);
+}
+
+/* https://codepen.io/jayenne/pen/qrKmer PUSH PIN */
+.pushpin {
+    margin: auto;
+    position: relative;
+    width: 30px;
+    height: 52.5px;
+    z-index: 1;
+    top: 15px;
+    transition: transform 0.3s ease;
+}
+
+.projects .pushpin,
+.about .pushpin {
+    top: -30px;
+}
+
+.pushpin-holder {
+    position: relative;
+    top: -10px;
+}
+
+.pushpin.tilted {
+    -ms-transform: rotate(9deg);
+    -moz-transform: rotate(9deg);
+    -webkit-transform: rotate(9deg);
+    -o-transform: rotate(9deg);
+    transform: rotate(9deg);
+}
+
+.pinhead {
+    width: 75%;
+    height: 20%;
+    border-radius: 100%;
+    position: relative;
+    left: 12.5%;
+    top: 0;
+    background: var(--light-green);
+}
+
+.pinhead:after {
+    /*once was red*/
+    background: #ffffff;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: -30%;
+    left: 0;
+    background: var(--dark-green);
+}
+
+.pinbase {
+    width: 100%;
+    height: 25%;
+    border-radius: 100%;
+    position: relative;
+    left: 0;
+    top: 30%;
+    background: var(--dark-green);
+}
+
+.pinbase:after {
+    /*once was red*/
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    background: #ffffff;
+    top: -30%;
+    left: 0;
+    background: var(--light-green);
+}
+
+.pinshaft {
+    height: 30%;
+    width: 50%;
+    position: relative;
+    border-radius: 0;
+    top: -30%;
+    left: 25%;
+    background: var(--light-green);
+
+}
+
+.pinshaft:after {
+    content: '';
+    width: 100%;
+    height: 50%;
+    border-radius: 50%;
+    position: absolute;
+    top: 75%;
+}
+
+.pinpoint {
+    display: block;
+    background: #999;
+    height: 70%;
+    width: 14%;
+    position: absolute;
+    border-radius: 0 0 20% 20%;
+    z-index: -50;
+    bottom: 0;
+    left: 43%;
+    box-shadow: 0 10px 20px 7px rgba(0, 0, 0, 0.2);
+}
+
+.jostle {
+    transform: rotate(9deg);
+    box-shadow: 10px 10px 10px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* --------------------------------SCROLLBAR-------------------------------- */
+/* https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-green);
+    opacity: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--dark-green);
+    border-radius: 8px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--yellow);
+}
+
+::-webkit-scrollbar-corner {
+    background: var(--light-green);
+}
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------RETURN BUTTONS--------------------------------*/
+
+#back-to-gallery,
+#back-to-top,
+#check-out,
+#to-cv {
+    display: inline-block;
+    background-image: url("../images/tape/tape-straight-kraft3.png");
+    background-size: 360px 60px;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+#back-to-gallery:hover,
+#back-to-top:hover {
+    color: var(--berry);
+    transition: 0.2s ease;
+}
+
+#to-cv {
+    margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------PADDING, WRAPPING, AND FLEXING--------------------------------*/
+
+.picture-padding,
+.zine-padding {
+    padding: 0 15px 0 15px;
+}
+
+#portfolio-parent div h2,
+.basic-padding {
+    padding: 15px;
+}
+
+.caption-padding {
+    padding: 0 5px 25px;
+}
+
+
+
+
+
+
+
+
+
+.container,
+.container2 {
+    max-width: 80vw;
+    margin: auto;
+}
+
+
+
+.bttm-spacer {
+    padding: 0 0 5vh 0;
+}
+
+.top-spacer {
+    padding: 5vh 0 0 0;
+}
+
+.bump-up {
+    transform: translateY(-40px);
+}
+
+.half-up {
+    transform: translateY(-20px);
+}
+
+
+
+
+
+
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+main::before,
+main::after {
+    content: '';
+    /* Add content */
+    flex: 1;
+    /* Fill remaining space */
+}
+
+.flex-parent {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* gap: 10vh; */
+}
+
+.flexy {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+/* .flex-bttm {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------ANIMATIONS--------------------------------*/
+
+/*https://css-tricks.com/making-css-animations-feel-natural/*/
+
+.active-bounce-down {
+    animation-name: active-bounce-down;
+    animation-timing-function: ease;
+}
+
+@keyframes active-bounce-down {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    10% {
+        transform: scale(1.1, .9);
+    }
+
+    30% {
+        transform: scale(.9, 1.5);
+    }
+
+    50% {
+        transform: scale(1.05, .95);
+    }
+
+    57% {
+        transform: scale(1, 1);
+    }
+
+    64% {
+        transform: scale(1, 1);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+.active-bounce {
+    animation-name: active-bounce;
+    animation-timing-function: ease;
+}
+
+@keyframes active-bounce {
+    0% {
+        transform: scale(1, 1) translateY(0);
+    }
+
+    10% {
+        transform: scale(1.1, .9) translateY(0);
+    }
+
+    30% {
+        transform: scale(.9, 1.1) translateY(-10px);
+    }
+
+    50% {
+        transform: scale(1.05, .95) translateY(4px);
+    }
+
+    57% {
+        transform: scale(1, 0.975) translateY(-2px);
+    }
+
+    64% {
+        transform: scale(1, 1) translateY(0);
+    }
+
+    100% {
+        transform: scale(1, 1) translateY(0);
+    }
+}
+
+
+.dot-active,
+.dot:hover {
+    background-color: var(--yellow);
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+
+
+
+@media screen and (max-width: 1200px) {
+
+    #tape-label1,
+    #tape-label2,
+    #tape-label3,
+    #tape-label5 {
+        background-size: 100% 85px;
+    }
+
+
+    .tabs li a,
+    .tabs .active li a {
+        padding: 10px;
+    }
+
+    .tabs .active a,
+    .tabs li a:hover {
+        padding: 15px 10px;
+    }
+
+    h1 {
+        font-size: 60px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
+
+    h1 {
+        font-size: 50px;
+    }
+
+    .bump-up {
+        transform: translateY(0px);
+    }
+
+
+    .tape1point5 {
+        transform: translateY(-290%) translateX(-225%);
+    }
+
+    .tape1point6 {
+        transform: translateY(-275%) translateX(-10%);
+    }
+}
+
+
+
+
+@media screen and (max-width: 880px) {
+
+    #name a h1 {
+        font-size: 30px;
+        /* display: none; */
+    }
+
+    #bee {
+        height: 30px;
+    }
+}
+
+
+@media screen and (max-width: 750px) {
+
+    ::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .tape1point5 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    #name {
+        padding: 15px 0 0 15px;
+    }
+
+    #bee {
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    h1,
+    h2 {
+        font-size: 20px;
+    }
+
+
+    h3,
+    #categories-parent li,
+    .tabs li,
+    #music-list li,
+    #scroll-list li {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+}

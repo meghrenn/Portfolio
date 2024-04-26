@@ -62,7 +62,7 @@
     font-family: "Komika-Hand";
     font-style: normal;
     font-weight: normal;
-    src: local('Komika Hand'), url("..\typefaces\komika_hands\KOMIKAHB.ttf") format('truetype');
+    src: local('Komika Hand'), url("../typefaces/komika_hands/KOMIKAHB.ttf") format('truetype');
 }
 
 
@@ -70,7 +70,7 @@
     font-family: "Bakso-Sapi";
     font-style: normal;
     font-weight: normal;
-    src: local('BaksoSapi'), url("..\typefaces\BaksoSapi.otf") format('opentype');
+    src: local('BaksoSapi'), url("../typefaces/BaksoSapi.otf") format('opentype');
 }
 
 

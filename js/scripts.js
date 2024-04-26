@@ -112,8 +112,11 @@ $(document).ready(function () {
 
     // SCROLL-BUTTON FUNCTIONALITY
     const scrollDown = new Audio('../audio/scroll-down.wav');
+    const scrollUp = new Audio('../audio/scroll-up.wav');
     scrollDown.playbackRate = 3.25;
     scrollDown.preload = 'auto';
+    scrollUp.playbackRate = 3.25;
+    scrollUp.preload = 'auto';
     var audioDurationMs = scrollDown.duration * 1000; // Convert seconds to milliseconds
     $('#scroll-list li').on('click', function () {
         var targetId = $(this).data('target');
@@ -124,17 +127,12 @@ $(document).ready(function () {
 
 
 
-        // Get the height of the viewport
+
         var viewportHeight = $(window).height();
-
-        // Get the height of the document
         var documentHeight = $(document).height();
+        var paddingNeeded = viewportHeight - (documentHeight - targetOffset); // Calculate the amount of padding needed to extend the page's length
 
-        // Calculate the amount of padding needed to extend the page's length
-        var paddingNeeded = viewportHeight - (documentHeight - targetOffset);
-
-        // Add temporary padding to the bottom of the page
-        $('body').css('padding-bottom', paddingNeeded);
+        $('body').css('padding-bottom', paddingNeeded);     // Add temporary padding to the bottom of the page
 
 
 
@@ -188,7 +186,7 @@ $(document).ready(function () {
         }, {
             duration: 500,
         });
-        scrollDown.play(1);
+        scrollUp.play(1);
     });
 });
 
